@@ -1,7 +1,10 @@
+/* shop이라는 database 생성 */
 create database shop;
 
+/* shop 사용 */
 use shop;
 
+/* 상품 table 생성 */
 create table product(
 id  int primary key,
 category varchar(10) not null,
@@ -17,6 +20,7 @@ small  varchar(20),
 large  varchar(20)
 );
 
+/* 판매 talbe 생성 */
 create table saleorder(
 id  int primary key,
 name  varchar(20) not null,
@@ -29,6 +33,7 @@ prodcount int default 0,
 total  int default 0
 );
 
+/* 판매 할 아이템 추가 생성 table */
 create table item(
 orderid  int not null,
 mynum  int not null,
@@ -38,6 +43,7 @@ quantity int default 0,
 price  int default 0
 );
 
+/* 판매 되었을 때 수량이 줄어듦. */
 create table sell(
 gameID  int primary key,
 sellcount int default 0
